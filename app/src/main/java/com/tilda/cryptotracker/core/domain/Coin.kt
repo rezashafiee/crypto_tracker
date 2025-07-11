@@ -9,3 +9,4 @@ data class Coin(
     val rank: Int,
     val changePercent24Hr: Double,
 )
+
