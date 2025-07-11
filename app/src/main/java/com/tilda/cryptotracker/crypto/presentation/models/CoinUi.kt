@@ -2,7 +2,7 @@ package com.tilda.cryptotracker.crypto.presentation.models
 
 import android.icu.text.NumberFormat
 import androidx.annotation.DrawableRes
-import com.tilda.cryptotracker.core.domain.Coin
+import com.tilda.cryptotracker.crypto.domain.Coin
 import com.tilda.cryptotracker.core.presentation.util.getDrawableIdForCoin
 import java.util.Locale
 

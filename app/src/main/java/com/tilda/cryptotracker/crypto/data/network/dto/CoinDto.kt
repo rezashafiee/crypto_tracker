@@ -1,6 +1,9 @@
-package com.tilda.cryptotracker.core.domain
+package com.tilda.cryptotracker.crypto.data.network.dto
 
-data class Coin(
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class CoinDto(
     val id: String,
     val symbol: String,
     val name: String,
@@ -9,4 +12,3 @@ data class Coin(
     val rank: Int,
     val changePercent24Hr: Double,
 )
-

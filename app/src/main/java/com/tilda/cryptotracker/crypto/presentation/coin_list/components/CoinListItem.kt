@@ -23,7 +23,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.tilda.cryptotracker.core.domain.Coin
+import com.tilda.cryptotracker.crypto.domain.Coin
 import com.tilda.cryptotracker.crypto.presentation.models.CoinUi
 import com.tilda.cryptotracker.crypto.presentation.models.toCoinUi
 import com.tilda.cryptotracker.ui.theme.CryptoTrackerTheme
