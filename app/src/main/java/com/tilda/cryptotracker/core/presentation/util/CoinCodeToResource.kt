@@ -1,4 +1,4 @@
-package com.tilda.cryptotracker.util
+package com.tilda.cryptotracker.core.presentation.util
 
 import com.tilda.cryptotracker.R
 

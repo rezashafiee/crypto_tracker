@@ -1,4 +1,4 @@
-package com.tilda.cryptotracker.util
+package com.tilda.cryptotracker.core.domain.util
 
 typealias DomainError = Error
 
