@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CryptoTracker</string>
+    <string name="request_timeout">Request timeout</string>
+    <string name="too_many_requests">Too many requests.</string>
+    <string name="no_internet_connection">No internet</string>
+    <string name="unknown_error">There is an issue occurred, please try later.</string>
 </resources>
