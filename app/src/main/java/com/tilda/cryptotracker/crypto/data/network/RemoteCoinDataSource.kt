@@ -1,5 +1,6 @@
 package com.tilda.cryptotracker.crypto.data.network
 
+import com.tilda.cryptotracker.BuildConfig
 import com.tilda.cryptotracker.core.data.network.constructUrl
 import com.tilda.cryptotracker.core.data.network.safeCall
 import com.tilda.cryptotracker.core.domain.util.NetworkError
@@ -14,12 +15,17 @@ import io.ktor.client.request.get
 
 class RemoteCoinDataSource(
     private val httpClient: HttpClient
-): CoinDataSource {
+) : CoinDataSource {
     override suspend fun getCoins(): Result<List<Coin>, NetworkError> {
         return safeCall<CoinResponseDto> {
             httpClient.get(
                 urlString = constructUrl("/assets")
-            )
+            ) {
+                url.parameters.append(
+                    "apiKey",
+                    BuildConfig.API_KEY
+                )
+            }
         }.map { response ->
             response.data.map { it.toCoin() }
         }

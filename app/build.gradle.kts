@@ -1,3 +1,6 @@
+import java.util.Properties
+
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -5,6 +8,11 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
 }
 
+val localProperties = Properties()
+val localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localProperties.load(localPropertiesFile.inputStream())
+}
 
 android {
     namespace = "com.tilda.cryptotracker"
@@ -21,6 +29,11 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        buildConfigField(
+            "String",
+            "API_KEY",
+            "\"${localProperties.getProperty("API_KEY")}\""
+        )
     }
 
     buildTypes {
@@ -28,7 +41,7 @@ android {
             buildConfigField(
                 "String",
                 "BASE_URL",
-                "\"https://api.coincap.io/v2/\""
+                "\"https://rest.coincap.io/v3/\""
             )
         }
         release {
@@ -40,7 +53,7 @@ android {
             buildConfigField(
                 "String",
                 "BASE_URL",
-                "\"https://api.coincap.io/v2/\""
+                "\"https://rest.coincap.io/v3/\""
             )
         }
     }
